@@ -63,3 +63,79 @@ class BinTree {
 
     }
 }
+
+
+
+class TreeNode {
+    int key;
+    TreeNode left;
+    TreeNode right;
+
+    public TreeNode(int key) {
+        this.key = key;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+class BinaryTree {
+    TreeNode root;
+
+    public BinaryTree() {
+        root = null;
+    }
+
+    // Função para inserir um elemento na árvore
+    public void insert(int key) {
+        root = insertRec(root, key);
+    }
+
+    private TreeNode insertRec(TreeNode root, int key) {
+        if (root == null) {
+            return new TreeNode(key);
+        }
+
+        if (key < root.key) {
+            root.left = insertRec(root.left, key);
+        } else if (key > root.key) {
+            root.right = insertRec(root.right, key);
+        }
+
+        return root;
+    }
+
+    public void printTree() {
+        printTreeRec(root);
+    }
+
+    private void printTreeRec(TreeNode root) {
+        if (root != null) {
+            System.out.print(root.key + " ");
+            printTreeRec(root.left);
+            printTreeRec(root.right);
+        }
+    }
+
+}
+
+
+
+public class Main {
+    public static void main(String[] args) {
+        BinaryTree tree = new BinaryTree();
+
+        tree.insert(50);
+        tree.insert(35);
+        tree.insert(70);
+        tree.insert(25);
+        tree.insert(40);
+        tree.insert(65);
+        tree.insert(90);
+        tree.insert(80);
+        tree.insert(30);
+
+        System.out.println("Árvore em ordem:");
+        tree.printTree();
+        System.out.println("\n");
+    }
+}
