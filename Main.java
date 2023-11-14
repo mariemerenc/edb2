@@ -63,7 +63,7 @@ class BinTree {
             }
 
             // Imprime o valor do nó
-            System.out.println(curr.value + "---------------------");
+            System.out.println(curr.value + "-------------------");
 
             // Chamada recursiva para os filhos
             imprimeFormato1(curr.left, nivel + 1);
@@ -360,16 +360,19 @@ class BinTree {
 
     //busca que retorna o valor de um nó buscado
     public int busca(Node node, int valor) {
-        if (root == null || root.value == valor)
-            return root.value;
- 
+        if (node == null) {
+            return -1; // or some other value indicating not found
+        }
         
-        if (root.value < valor)
-            return busca(root.right, valor);
- 
-       
-        return busca(root.left, valor);
-
+        if (node.value == valor) {
+            return node.value;
+        }
+        
+        if (node.value > valor) {
+            return busca(node.left, valor);
+        } else {
+            return busca(node.right, valor);
+        }
     }
 
     //retorna o nó que é mediana da ABB
