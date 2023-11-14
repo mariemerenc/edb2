@@ -1,6 +1,6 @@
-# Árvore Binária em Java
+# Árvore de Busca Binária em Java
 
-Este projeto implementa uma Árvore Binária em Java e fornece operações como busca, inserção, remoção, cálculo da mediana, verificação de cheias/completas, entre outras.
+Este projeto implementa uma Árvore de Busca Binária em Java e fornece operações como busca, inserção, remoção, cálculo da mediana, verificação de cheias/completas, entre outras.
 
 
 ## Como Executar
